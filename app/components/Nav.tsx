@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React from "react";
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import Image from "next/image";
@@ -75,7 +75,7 @@ export default function Nav() {
                 </NavbarItem>
                 <NavbarItem className="hidden sm:flex">
                     <Button as={Link} color="primary" href="#" variant="flat">
-                        Let's Talk
+                        Let&rsquo;s Talk
                     </Button>
                 </NavbarItem>
             </NavbarContent>
