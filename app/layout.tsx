@@ -9,6 +9,7 @@ const outfit = Outfit({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Petchx',
   description: 'Petchx - Fullstack Developer',
+  icons: "./assets/favicon.ico",
 }
 
 export default function RootLayout({
@@ -18,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+
       <body className={outfit.className}>
         <Providers>
           {children}
