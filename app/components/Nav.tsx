@@ -11,16 +11,10 @@ export default function Nav() {
     const { theme } = useTheme()
 
     const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
+        "Home",
+        "About",
+        "Work",
+        "Contact",
     ];
 
     return (
@@ -88,7 +82,7 @@ export default function Nav() {
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
                             color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                                index === 0 ? "primary" : "foreground"
                             }
                             className="w-full"
                             href="#"
