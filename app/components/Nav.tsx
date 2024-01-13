@@ -6,16 +6,9 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useTheme } from "next-themes";
 
 
-export default function Nav() {
+export default function Nav({ index }: { index: string }) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const { theme } = useTheme()
-
-    const menuItems = [
-        "Home",
-        "About",
-        "Work",
-        "Contact",
-    ];
 
     return (
         <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl" className="bg-white dark:bg-black">
@@ -41,24 +34,29 @@ export default function Nav() {
                 </NavbarBrand>
             </NavbarContent>
 
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem isActive>
-                    <Link aria-current="page" href="#">
+            <NavbarContent className="hidden sm:flex gap-6" justify="center">
+                <NavbarItem isActive={index === 'home'}>
+                    <Link color={index === 'home' ? 'primary' : 'foreground'} href="/" className="hover:text-primary cursor-pointer">
                         Home
                     </Link>
                 </NavbarItem>
-                <NavbarItem >
-                    <Link color="foreground" href="#" className="hover:text-primary">
+                <NavbarItem isActive={index === 'about'}>
+                    <Link color={index === 'about' ? 'primary' : 'foreground'} href="/about" className="hover:text-primary cursor-pointer">
                         About
                     </Link>
                 </NavbarItem>
-                <NavbarItem>
-                    <Link color="foreground" href="#" className="hover:text-primary">
-                        Work
+                <NavbarItem isActive={index === 'projects'}>
+                    <Link color={index === 'projects' ? 'primary' : 'foreground'} href="/projects" className="hover:text-primary cursor-pointer">
+                        Projects
                     </Link>
                 </NavbarItem>
-                <NavbarItem>
-                    <Link color="foreground" href="#" className="hover:text-primary">
+                <NavbarItem isActive={index === 'services'}>
+                    <Link color={index === 'services' ? 'primary' : 'foreground'} href="/services" className="hover:text-primary cursor-pointer">
+                        Services
+                    </Link>
+                </NavbarItem>
+                <NavbarItem isActive={index === 'contact'}>
+                    <Link color={index === 'contact' ? 'primary' : 'foreground'} href="/contact" className="hover:text-primary cursor-pointer">
                         Contact
                     </Link>
                 </NavbarItem>
@@ -68,7 +66,7 @@ export default function Nav() {
                     <ThemeSwitcher />
                 </NavbarItem>
                 <NavbarItem className="hidden sm:flex">
-                    <Button as={Link} color="primary" href="#" variant="flat">
+                    <Button as={Link} color="primary" href="/contact" variant="flat">
                         Let&rsquo;s Talk
                     </Button>
                 </NavbarItem>
@@ -78,21 +76,14 @@ export default function Nav() {
                 className="sm:hidden"
             />
             <NavbarMenu>
-                {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            color={
-                                index === 0 ? "primary" : "foreground"
-                            }
-                            className="w-full"
-                            href="#"
-                            size="lg"
-                        >
-                            {item}
-                        </Link>
-                    </NavbarMenuItem>
-                ))}
+                <NavbarMenuItem >
+                    <Link color={index === "home" ? "primary" : "foreground"} className="w-full" href="/" size="lg">Home</Link>
+                    <Link color={index === "about" ? "primary" : "foreground"} className="w-full" href="/about" size="lg">About</Link>
+                    <Link color={index === "projects" ? "primary" : "foreground"} className="w-full" href="/projects" size="lg">Projects</Link>
+                    <Link color={index === "services" ? "primary" : "foreground"} className="w-full" href="/services" size="lg">Services</Link>
+                    <Link color={index === "contact" ? "primary" : "foreground"} className="w-full" href="/contact" size="lg">Contact</Link>
+                </NavbarMenuItem>
             </NavbarMenu>
-        </Navbar>
+        </Navbar >
     );
 }

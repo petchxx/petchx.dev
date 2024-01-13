@@ -30,7 +30,6 @@ const config: Config = {
             DEFAULT: "#B477EB",
           },
           secondary: "#F8F8F8",
-
         }
       },
       dark: {

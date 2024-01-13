@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { TbWorldCode, TbCode, TbDeviceMobileCode, TbDeviceDesktopCode, TbBrandGithub, TbBrandInstagram } from "react-icons/tb";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
+import { FaEnvelope, FaLine } from "react-icons/fa6";
 
 export default function Home() {
   const router = useRouter()
@@ -14,7 +15,7 @@ export default function Home() {
 
   return (
     <main className=''>
-      <Nav />
+      <Nav index="home" />
 
       {/* BODY */}
       {/* First row */}
@@ -47,38 +48,43 @@ export default function Home() {
             </CardBody>
           </Card>
           <div className="grid-cols-1 sm:grid-cols-2 grid gap-6 order-3">
-            <Card className='rounded-3xl col-span-1 h-60 hover:scale-[1.02]'>
-              <CardBody className='items-center justify-center'>
-                <Image
-                  src="/assets/memoji.png"
-                  className='pointer-events-none'
-                  width={126}
-                  height={126}
-                  alt="Petchx Logo"
-                />
-                <CardFooter className='justify-start flex-col items-start p-4'>
-                  <h1 className='opacity-50 text-xs'>MORE ABOUT ME</h1>
-                  <h1 className='text-xl'>Credentials</h1>
-                </CardFooter>
-              </CardBody>
+            <Link href={"/about"}>
+              <Card className='rounded-3xl col-span-1 h-60 hover:scale-[1.02]'>
+                <CardBody className='items-center justify-center'>
+                  <Image
+                    src="/assets/memoji.png"
+                    className='pointer-events-none'
+                    width={126}
+                    height={126}
+                    alt="Petchx Logo"
+                  />
+                  <CardFooter className='justify-start flex-col items-start p-4'>
+                    <h1 className='opacity-50 text-xs'>MORE ABOUT ME</h1>
+                    <h1 className='text-xl'>About me</h1>
+                  </CardFooter>
+                </CardBody>
 
-            </Card>
-            <Card className='rounded-3xl col-span-1 h-60 hover:scale-[1.02]'>
-              <CardBody className='items-center justify-center'>
-                <Image
-                  src="/assets/logo.gif"
-                  className='pointer-events-none'
-                  width={126}
-                  height={126}
-                  alt="Petchx Logo"
-                />
-                <CardFooter className='justify-start flex-col items-start'>
-                  <h1 className='opacity-50 text-xs'>SHOW CASE</h1>
-                  <h1 className='text-xl'>Projects</h1>
-                </CardFooter>
-              </CardBody>
+              </Card>
+            </Link>
+            <Link href={"/projects"}>
+              <Card className='rounded-3xl col-span-1 h-60 hover:scale-[1.02]'>
+                <CardBody className='items-center justify-center'>
+                  <Image
+                    src="/assets/logo.gif"
+                    className='pointer-events-none'
+                    width={126}
+                    height={126}
+                    alt="Petchx Logo"
+                  />
+                  <CardFooter className='justify-start flex-col items-start'>
+                    <h1 className='opacity-50 text-xs'>SHOW CASE</h1>
+                    <h1 className='text-xl'>Projects</h1>
+                  </CardFooter>
+                </CardBody>
 
-            </Card>
+              </Card>
+            </Link>
+
           </div>
         </div>
 
@@ -86,54 +92,20 @@ export default function Home() {
         {/* <div className="col-span-3 grid-cols-3 grid gap-6">
         </div> */}
         <div className="col-span-2 sm:col-span-1 h-60 order-5 lg:order-4">
-          <Card className='rounded-3xl h-full hover:scale-[1.02]'>
-            <CardBody className='justify-center items-center'>
-              <div className="h-32">
-
-              </div>
-              <CardFooter className='justify-start flex-col items-start'>
-                <h1 className='opacity-50 text-xs'>COMMING SOON</h1>
-                <h1 className='text-xl'>COMMING SOON</h1>
-              </CardFooter>
-            </CardBody>
-
-          </Card>
-        </div>
-        <div className="col-span-2 lg:col-span-2 h-60 order-4 lg:order-5">
-          <Card className='rounded-3xl h-full hover:scale-[1.02]'>
-            <CardBody className='justify-center items-center'>
-              <div className="h-32 flex gap-10 text-primary items-center">
-                <TbCode size={50} />
-                <TbDeviceMobileCode size={50} />
-                <TbWorldCode size={50} />
-                <TbDeviceDesktopCode size={50} />
-
-              </div>
-              <CardFooter className='justify-start flex-col items-start'>
-                <h1 className='opacity-50 text-xs'>SPECIALIZATION</h1>
-                <h1 className='text-xl'>Service Offering</h1>
-              </CardFooter>
-            </CardBody>
-          </Card>
-        </div>
-
-        <div className="col-span-2 sm:col-span-1 h-60 order-6 cursor-pointer" onClick={() => router.push('#')}>
           <Card className='rounded-3xl h-full hover:scale-[1.02]' >
             <CardBody className='justify-center items-center'>
               <div className="px-4 w-full">
                 <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-4">
-                  <div className="rounded-full bg-content1 p-4 hover:text-foreground" onClick={(e) => {
-                    e.stopPropagation();
-                    router.push('https://github.com/petchxx');
-                  }}>
-                    <TbBrandGithub size={40} />
-                  </div>
-                  <div className="rounded-full bg-content1 p-4 hover:text-foreground" onClick={(e) => {
-                    e.stopPropagation();
-                    router.push('https://www.instagram.com/petchxig/');
-                  }}>
-                    <TbBrandInstagram size={40} />
-                  </div>
+                  <Link href={"https://github.com/petchxx"}>
+                    <div className="rounded-full bg-content1 p-4 hover:text-foreground">
+                      <TbBrandGithub size={40} />
+                    </div>
+                  </Link>
+                  <Link href={"https://www.instagram.com/petchxig"}>
+                    <div className="rounded-full bg-content1 p-4 hover:text-foreground">
+                      <TbBrandInstagram size={40} />
+                    </div>
+                  </Link>
                 </div>
 
               </div>
@@ -143,6 +115,60 @@ export default function Home() {
               </CardFooter>
             </CardBody>
           </Card>
+
+        </div>
+        <div className="col-span-2 lg:col-span-2 h-60 order-4 lg:order-5">
+          <Link href={"/services"}>
+            <Card className='rounded-3xl h-full hover:scale-[1.02]'>
+              <CardBody className='justify-center items-center'>
+                <div className="h-32 flex gap-10 text-primary items-center">
+                  <TbCode size={50} />
+                  <TbDeviceMobileCode size={50} />
+                  <TbDeviceDesktopCode size={50} />
+                  <TbWorldCode size={50} />
+
+                </div>
+                <CardFooter className='justify-start flex-col items-start'>
+                  <h1 className='opacity-50 text-xs'>SPECIALIZATION</h1>
+                  <h1 className='text-xl'>Service Offering</h1>
+                </CardFooter>
+              </CardBody>
+            </Card>
+          </Link>
+        </div>
+
+        <div className="col-span-2 sm:col-span-1 h-60 order-6 ">
+          <Link href={"/contact"}>
+            <Card className='rounded-3xl h-full hover:scale-[1.02]' onClick={() => { router.push("/contact") }}>
+              <CardBody className='justify-center items-center'>
+                <div className="px-4 w-full">
+                  <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-4">
+                    <div className="rounded-full bg-content1 p-5 hover:text-foreground" onClick={(e) => {
+                      e.preventDefault();
+                      router.push("mailto:petchxpanuphong@gmail.com")
+                    }}>
+                      <FaEnvelope size={25} />
+                    </div>
+                    <div className="rounded-full bg-content1 p-5 hover:text-foreground" onClick={
+                      (e) => {
+                        e.preventDefault();
+                        router.push("https://lin.ee/1kSm3fq")
+                      }
+                    }>
+                      <FaLine size={25} />
+                    </div>
+
+                  </div>
+
+                </div>
+                <CardFooter className='justify-start flex-col items-start'>
+                  <h1 className='opacity-50 text-xs'>START A PROJECT</h1>
+                  <h1 className='text-xl'>Contact</h1>
+                </CardFooter>
+              </CardBody>
+
+            </Card>
+          </Link>
         </div>
 
 
@@ -162,23 +188,7 @@ export default function Home() {
           </Card>
         </div>
       </div>
-      <footer className='h-28 flex justify-center items-center'>
-        <Link href="#">
-          <Image
-            src="/assets/petchx-dark.svg"
-            className="hidden dark:block pointer-events-none"
-            width={120}
-            height={43}
-            alt="Petchx Logo"
-          />
-          <Image
-            src="/assets/petchx-light.svg"
-            className="block dark:hidden pointer-events-none"
-            width={120}
-            height={43}
-            alt="Petchx Logo"
-          /></Link>
-      </footer>
-    </main>
+
+    </main >
   )
 }
