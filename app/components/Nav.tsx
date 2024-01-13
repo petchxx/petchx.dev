@@ -31,14 +31,14 @@ export default function Nav() {
                     <Link href="#">
                         <Image
                             src="/assets/petchx-dark.svg"
-                            className="hidden dark:block"
+                            className="hidden dark:block pointer-events-none"
                             width={120}
                             height={43}
                             alt="Petchx Logo"
                         />
                         <Image
                             src="/assets/petchx-light.svg"
-                            className="block dark:hidden"
+                            className="block dark:hidden pointer-events-none"
                             width={120}
                             height={43}
                             alt="Petchx Logo"
