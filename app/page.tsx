@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 import { FaEnvelope, FaLine } from "react-icons/fa6";
 import { motion } from 'framer-motion';
+import info from './info.json';
 
 export default function Home() {
   const router = useRouter()
@@ -50,7 +51,7 @@ export default function Home() {
 
       {/* BODY */}
       {/* First row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl p-4 justify-center mx-auto mt-4 w-sc">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl p-4 justify-center mx-auto mt-4">
         <motion.div className="col-span-2 order-1" initial={{
           "x": "-100vw"
         }}
@@ -75,9 +76,9 @@ export default function Home() {
                 />
 
                 <CardFooter className='justify-start flex-col items-start'>
-                  <h1 className='mt-2 opacity-50'>Fullstack Developer</h1>
-                  <h1 className='mt-2 text-4xl font-bold'>Petchx</h1>
-                  <h1 className='mt-2'>From database to user interface, I do it all</h1>
+                  <h1 className='mt-2 opacity-50'>{info.role}</h1>
+                  <h1 className='mt-2 text-4xl font-bold'>{info.name}</h1>
+                  <h1 className='mt-2'>{info.description}</h1>
                 </CardFooter>
               </div>
             </CardBody>

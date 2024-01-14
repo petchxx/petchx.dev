@@ -1,0 +1,50 @@
+{
+    "name": "Petchx",
+    "fullname": "Panuphong Burakitphachai",
+    "role": "Fullstack Developer",
+    "description": "From database to user interface, I do it all",
+    "about": "I am a fullstack developer with a passion for creating innovative and user-friendly web and mobile applications. I specialize in utilizing modern technologies and best practices to build high-quality and efficient software.",
+    "experience": [
+        {
+            "year": "2020 - Now",
+            "work": "Fullstack Developer",
+            "company": "Petchx Company"
+        }
+    ],
+    "education": [
+        {
+            "year": "2014 - 2020",
+            "education": "High School",
+            "name": "St.Paul's School Darjeeling, India"
+        },
+        {
+            "year": "2021 - Now",
+            "education": "Computer Science",
+            "name": "Assumption University of Thailand"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Web Development",
+            "description": "HTML, CSS, JavaScript, React, Node.js, Express.js, MySQL, MongoDB, PHP",
+            "percent": "95%"
+        },
+        {
+            "name": "Mobile Development",
+            "description": "Flutter",
+            "percent": "90%"
+        },
+        {
+            "name": "UX/UI Design",
+            "description": "Figma",
+            "percent": "70%"
+        }
+    ],
+    "awards": [
+        {
+            "year": "2020",
+            "name": "World Class Award",
+            "description": "Network Studio Academy"
+        }
+    ]
+}
