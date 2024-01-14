@@ -12,7 +12,7 @@ export default function Nav({ index }: { index: string }) {
 
     return (
 
-        <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl" className="bg-white dark:bg-black" >
+        <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl" className="bg-white dark:bg-black" shouldHideOnScroll>
             <NavbarContent>
                 <NavbarBrand>
                     <Link href="#">
