@@ -8,9 +8,40 @@ import { TbWorldCode, TbCode, TbDeviceMobileCode, TbDeviceDesktopCode, TbBrandGi
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 import { FaEnvelope, FaLine } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const router = useRouter()
+
+  const moveUp = {
+    "init": {
+      "y": "300px",
+      "opacity": 0
+    },
+    "end": {
+      "y": "0",
+      "opacity": 1,
+      "transition": {
+        "type": "tween",
+        "delay": 0.5
+      }
+    }
+  }
+
+  const fadeIn = {
+    "init": {
+      "opacity": 0
+    },
+    "end": {
+      "opacity": 1,
+      "transition": {
+        "type": "tween",
+        "delay": 1,
+        "duration": 1,
+      }
+    }
+  }
+
 
 
   return (
@@ -19,8 +50,19 @@ export default function Home() {
 
       {/* BODY */}
       {/* First row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl p-4 justify-center mx-auto mt-4">
-        <div className="col-span-2 order-1">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl p-4 justify-center mx-auto mt-4 w-sc">
+        <motion.div className="col-span-2 order-1" initial={{
+          "x": "-100vw"
+        }}
+          animate={{
+            "x": "0"
+          }}
+          transition={
+            {
+              "type": "tween",
+            }
+          }
+        >
           <Card className='rounded-3xl h-full hover:scale-[1.02] cursor-default p-4'>
             <CardBody className='justify-center p-4'>
               <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-6 ">
@@ -40,8 +82,16 @@ export default function Home() {
               </div>
             </CardBody>
           </Card>
-        </div>
-        <div className="col-span-2 justify-between flex flex-col gap-6 order-2">
+        </motion.div>
+        <motion.div className="col-span-2 justify-between flex flex-col gap-6 order-2" initial={{
+          "x": "100vw"
+        }}
+          animate={{
+            "x": "0"
+          }}
+          transition={
+            { "type": "tween" }
+          }>
           <Card className='rounded-full h-full hover:scale-[1.02]'>
             <CardBody className='items-center justify-center'>
               Fullstack Developer
@@ -86,12 +136,12 @@ export default function Home() {
             </Link>
 
           </div>
-        </div>
+        </motion.div>
 
 
         {/* <div className="col-span-3 grid-cols-3 grid gap-6">
         </div> */}
-        <div className="col-span-2 sm:col-span-1 h-60 order-5 lg:order-4">
+        <motion.div className="col-span-2 sm:col-span-1 h-60 order-5 lg:order-4" variants={moveUp} initial="init" animate="end">
           <Card className='rounded-3xl h-full hover:scale-[1.02]' >
             <CardBody className='justify-center items-center'>
               <div className="px-4 w-full">
@@ -116,8 +166,9 @@ export default function Home() {
             </CardBody>
           </Card>
 
-        </div>
-        <div className="col-span-2 lg:col-span-2 h-60 order-4 lg:order-5">
+        </motion.div>
+
+        <motion.div className="col-span-2 lg:col-span-2 h-60 order-4 lg:order-5" variants={moveUp} initial="init" animate="end">
           <Link href={"/services"}>
             <Card className='rounded-3xl h-full hover:scale-[1.02]'>
               <CardBody className='justify-center items-center'>
@@ -135,9 +186,9 @@ export default function Home() {
               </CardBody>
             </Card>
           </Link>
-        </div>
+        </motion.div>
 
-        <div className="col-span-2 sm:col-span-1 h-60 order-6 ">
+        <motion.div className="col-span-2 sm:col-span-1 h-60 order-6 " variants={moveUp} initial="init" animate="end">
           <Link href={"/contact"}>
             <Card className='rounded-3xl h-full hover:scale-[1.02]' onClick={() => { router.push("/contact") }}>
               <CardBody className='justify-center items-center'>
@@ -169,24 +220,24 @@ export default function Home() {
 
             </Card>
           </Link>
-        </div>
+        </motion.div>
 
 
 
-        <div className="col-span-2 0 h-60 order-7">
+        <motion.div className="col-span-2 0 h-60 order-7" variants={fadeIn} initial="init" animate="end">
           <Card className='rounded-3xl h-full hover:scale-[1.02]'>
             <CardBody className='justify-center items-center'>
               <h1 className='text-5xl font-bold'>COMMING SOON</h1>
             </CardBody>
           </Card>
-        </div>
-        <div className=" col-span-2 h-60 order-8">
+        </motion.div>
+        <motion.div className=" col-span-2 h-60 order-8" variants={fadeIn} initial="init" animate="end">
           <Card className='rounded-3xl h-full hover:scale-[1.02]'>
             <CardBody className='justify-center items-center'>
               <h1 className='text-5xl font-bold'>COMMING SOON</h1>
             </CardBody>
           </Card>
-        </div>
+        </motion.div>
       </div>
 
     </main >
