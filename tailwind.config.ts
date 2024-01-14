@@ -27,7 +27,7 @@ const config: Config = {
           background: "#FFFFFF", // or DEFAULT
           foreground: "#676767", // or 50 to 900 DEFAULT
           primary: {
-            DEFAULT: "#D050FF",
+            DEFAULT: "#CC5CE7",
           },
           secondary: "#F8F8F8",
         }
@@ -37,7 +37,7 @@ const config: Config = {
         colors: {
           background: "#000000", // or DEFAULT
           primary: {
-            DEFAULT: "#D050FF",
+            DEFAULT: "#CC5CE7",
           },
           secondary: "#1F1F22",
         }
