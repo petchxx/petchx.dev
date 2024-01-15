@@ -53,7 +53,7 @@ export default function About() {
                 </div>
 
                 <div className="max-w-2xl mt-10 px-2">
-                    <p className='text-4xl font-bold'>About Me</p>
+                    <p className='text-2xl font-bold'>About Me</p>
                     <p className='mt-6'>{info.about}</p>
                     <p className='text-2xl font-bold mt-12'>Experience</p>
                     {
