@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { ThemeSwitcher } from './components/ThemeSwitcher'
 import Nav from './components/Nav'
-import { Card, CardBody, CardFooter } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Skeleton } from "@nextui-org/react";
 import { useState, useEffect } from 'react';
 import { TbWorldCode, TbCode, TbDeviceMobileCode, TbDeviceDesktopCode, TbBrandGithub, TbBrandInstagram } from "react-icons/tb";
 import Link from 'next/link';
@@ -44,6 +44,9 @@ export default function Home() {
   }
 
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+
 
   return (
     <main className=''>
@@ -67,19 +70,25 @@ export default function Home() {
           <Card className='rounded-3xl h-full hover:scale-[1.02] cursor-default p-4'>
             <CardBody className='justify-center p-4'>
               <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-6 ">
+
                 <Image
                   src="/assets/petchx.png"
                   className='rounded-tl-3xl rounded-br-3xl pointer-events-none'
                   width={220}
                   height={220}
                   alt="Petchx Logo"
+                  onLoad={() => setImageLoaded(true)}
+                  onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
                 />
+                {!imageLoaded && <Skeleton className="rounded-lg h-[220px] min-w-[220px] rounded-tl-3xl rounded-br-3xl">
 
-                <CardFooter className='justify-start flex-col items-start'>
+                </Skeleton>}
+
+                <div className='justify-start flex-col w-full items-start'>
                   <h1 className='mt-2 opacity-50'>{info.role}</h1>
                   <h1 className='mt-2 text-4xl font-bold'>{info.name}</h1>
                   <h1 className='mt-2'>{info.description}</h1>
-                </CardFooter>
+                </div>
               </div>
             </CardBody>
           </Card>
