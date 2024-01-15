@@ -11,8 +11,8 @@ export default function About() {
         <main>
             <Nav index='about' />
             <div className="max-w-7xl justify-start md:flex mx-auto mt-4 p-4 gap-12">
-                <div className='relative md:fixed mt-10'>
-                    <Card className='rounded-3xl items-center gap-6 p-6'>
+                <div className=''>
+                    <Card className='rounded-3xl items-center gap-6 p-6 sticky top-32'>
                         <Image
                             src="/assets/petchx2.png"
                             className="rounded-3xl pointer-events-none"
@@ -52,7 +52,7 @@ export default function About() {
                     </Card>
                 </div>
 
-                <div className="max-w-2xl my-10 md:ml-96 px-2 md:pl-10">
+                <div className="max-w-2xl mt-10 px-2">
                     <p className='text-4xl font-bold'>About Me</p>
                     <p className='mt-6'>{info.about}</p>
                     <p className='text-2xl font-bold mt-12'>Experience</p>
