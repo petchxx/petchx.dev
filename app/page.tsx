@@ -84,11 +84,11 @@ export default function Home() {
 
                 </Skeleton>}
 
-                <div className='justify-start flex-col w-full items-start'>
+                <CardFooter className='justify-start flex-col w-full items-start'>
                   <h1 className='mt-2 opacity-50'>{info.role}</h1>
                   <h1 className='mt-2 text-4xl font-bold'>{info.name}</h1>
                   <h1 className='mt-2'>{info.description}</h1>
-                </div>
+                </CardFooter>
               </div>
             </CardBody>
           </Card>
