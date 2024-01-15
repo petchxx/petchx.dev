@@ -6,13 +6,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import info from '../info.json'
 
-
 export default function About() {
     return (
         <main>
             <Nav index='about' />
             <div className="max-w-7xl justify-start md:flex mx-auto mt-4 p-4 gap-12">
-                <div className="">
+                <div className='relative md:fixed mt-10'>
                     <Card className='rounded-3xl items-center gap-6 p-6'>
                         <Image
                             src="/assets/petchx2.png"
@@ -53,7 +52,7 @@ export default function About() {
                     </Card>
                 </div>
 
-                <div className="max-w-2xl mt-10">
+                <div className="max-w-2xl my-10 md:ml-96 px-2 md:pl-10">
                     <p className='text-4xl font-bold'>About Me</p>
                     <p className='mt-6'>{info.about}</p>
                     <p className='text-2xl font-bold mt-12'>Experience</p>
