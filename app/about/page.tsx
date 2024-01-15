@@ -1,25 +1,34 @@
+'use client';
 import React from 'react'
 import Nav from '../components/Nav'
-import { Button, Card, CardBody, CardFooter } from "@nextui-org/react";
+import { Button, Card, CardBody, CardFooter, Skeleton } from "@nextui-org/react";
 import { TbBrandX, TbBrandThreads, TbBrandGithub, TbBrandInstagram } from "react-icons/tb";
 import Link from 'next/link';
 import Image from 'next/image';
 import info from '../info.json'
+import { useState } from 'react';
+
 
 export default function About() {
+    const [imageLoaded, setImageLoaded] = useState(false);
     return (
         <main>
             <Nav index='about' />
             <div className="max-w-7xl justify-start md:flex mx-auto mt-4 p-4 gap-12">
                 <div className=''>
                     <Card className='rounded-3xl items-center gap-6 p-6 sticky top-32'>
-                        <Image
-                            src="/assets/petchx2.png"
-                            className="rounded-3xl pointer-events-none"
-                            width={320}
-                            height={320}
-                            alt="Petchx Logo"
-                        />
+
+                        <Skeleton className="rounded-3xl h-[320px] min-w-[320px]" isLoaded={imageLoaded}>
+                            <Image
+                                src="/assets/petchx2.png"
+                                className="pointer-events-none"
+                                fill={true}
+                                onLoad={() => setImageLoaded(true)}
+                                onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
+                                alt="Petchx Logo"
+                            />
+
+                        </Skeleton>
                         <div className="flex flex-col items-center">
                             <h1 className='text-2xl text-center'>{info.fullname}</h1>
                             <p className='opacity-50'>{info.name}</p>

@@ -55,9 +55,10 @@ export default function Home() {
       {/* BODY */}
       {/* First row */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl p-4 justify-center mx-auto mt-4">
-        <motion.div className="col-span-2 order-1" initial={{
-          "x": "-100vw"
-        }}
+        <motion.div className="col-span-2 order-1"
+          initial={{
+            "x": "-100vw"
+          }}
           animate={{
             "x": "0"
           }}
@@ -70,19 +71,16 @@ export default function Home() {
           <Card className='rounded-3xl h-full hover:scale-[1.02] cursor-default p-4'>
             <CardBody className='justify-center p-4'>
               <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-6 ">
-
-                <Image
-                  src="/assets/petchx.png"
-                  className='rounded-tl-3xl rounded-br-3xl pointer-events-none'
-                  width={220}
-                  height={220}
-                  alt="Petchx Logo"
-                  onLoad={() => setImageLoaded(true)}
-                  onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
-                />
-                {!imageLoaded && <Skeleton className="rounded-lg h-[220px] min-w-[220px] rounded-tl-3xl rounded-br-3xl">
-
-                </Skeleton>}
+                <Skeleton className='h-56 min-w-56 rounded-tl-3xl rounded-br-3xl' isLoaded={imageLoaded}>
+                  <Image
+                    src="/assets/petchx.png"
+                    className=' pointer-events-none'
+                    fill={true}
+                    alt="Petchx Logo"
+                    onLoad={() => setImageLoaded(true)}
+                    onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
+                  />
+                </Skeleton>
 
                 <CardFooter className='justify-start flex-col w-full items-start'>
                   <h1 className='mt-2 opacity-50'>{info.role}</h1>
