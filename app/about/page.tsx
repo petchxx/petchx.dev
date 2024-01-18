@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import Nav from '../components/Nav'
+import Nav from '../../components/Nav'
 import { Button, Card, CardBody, CardFooter, Skeleton } from "@nextui-org/react";
 import { TbBrandX, TbBrandThreads, TbBrandGithub, TbBrandInstagram } from "react-icons/tb";
 import Link from 'next/link';

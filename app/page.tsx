@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image'
-import { ThemeSwitcher } from './components/ThemeSwitcher'
-import Nav from './components/Nav'
+import { ThemeSwitcher } from '../components/ThemeSwitcher'
+import Nav from '../components/Nav'
 import { Card, CardBody, CardFooter, Skeleton } from "@nextui-org/react";
 import { useState, useEffect } from 'react';
 import { TbWorldCode, TbCode, TbDeviceMobileCode, TbDeviceDesktopCode, TbBrandGithub, TbBrandInstagram } from "react-icons/tb";
