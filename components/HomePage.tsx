@@ -7,9 +7,9 @@ import { FaEnvelope, FaLine } from "react-icons/fa6";
 import { Button, Card, CardBody, CardFooter, Skeleton } from "@nextui-org/react";
 import Link from 'next/link';
 import Image from 'next/image';
-import info from '../public/info.json'
+import info from '@/public/info.json'
 import { useState } from 'react';
-import Nav from '../components/Nav';
+import Nav from '@/components/Nav';
 import { TbCode, TbDeviceDesktopCode, TbDeviceMobileCode, TbWorldCode, TbBrandGithub, TbBrandInstagram } from 'react-icons/tb';
 
 
