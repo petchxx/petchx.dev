@@ -1,10 +1,6 @@
-import React from 'react'
-import Nav from '@/components/Nav'
+import ProjectsPage from "@/components/ProjectsPage";
+import React from "react";
 
 export default function Projects() {
-    return (
-        <main>
-            <Nav index='projects' />
-        </main>
-    )
+  return <ProjectsPage />;
 }
