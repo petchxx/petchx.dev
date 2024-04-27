@@ -36,14 +36,14 @@ export default function Nav({ index }: { index: string }) {
               className="hidden dark:block pointer-events-none"
               width={120}
               height={43}
-              alt="Petchx Logo"
+              alt="Petchx Panuphong Burakitphachai"
             />
             <Image
               src="/assets/petchx-light.svg"
               className="block dark:hidden pointer-events-none"
               width={120}
               height={43}
-              alt="Petchx Logo"
+              alt="Petchx Panuphong Burakitphachai"
             />
           </Link>
         </NavbarBrand>

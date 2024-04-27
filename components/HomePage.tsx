@@ -92,7 +92,7 @@ export default function HomePage({}: Props) {
                       src="/assets/petchx.png"
                       className=" pointer-events-none object-cover"
                       fill={true}
-                      alt="Petchx Logo"
+                      alt="Petchx Panuphong Burakitphachai"
                       onLoad={() => setImageLoaded(true)}
                       onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
                     />
@@ -135,7 +135,7 @@ export default function HomePage({}: Props) {
                       className="pointer-events-none"
                       width={126}
                       height={126}
-                      alt="Petchx Logo"
+                      alt="Petchx Panuphong Burakitphachai"
                     />
                     <CardFooter className="justify-start flex-col items-start p-4">
                       <h1 className="opacity-50 text-xs">MORE ABOUT ME</h1>
@@ -154,7 +154,7 @@ export default function HomePage({}: Props) {
                       className="pointer-events-none"
                       width={126}
                       height={126}
-                      alt="Petchx Logo"
+                      alt="Petchx Panuphong Burakitphachai"
                     />
                     <CardFooter className="justify-start flex-col items-start">
                       <h1 className="opacity-50 text-xs">SHOW CASE</h1>
@@ -180,12 +180,18 @@ export default function HomePage({}: Props) {
               <CardBody className="justify-center items-center">
                 <div className="px-4 w-full">
                   <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-4">
-                    <Link href={"https://github.com/petchxx"}>
+                    <Link
+                      aria-label="Petchxx"
+                      href={"https://github.com/petchxx"}
+                    >
                       <div className="rounded-full bg-content1 p-4 hover:text-foreground">
                         <TbBrandGithub size={40} />
                       </div>
                     </Link>
-                    <Link href={"https://www.instagram.com/petchxig"}>
+                    <Link
+                      aria-label="Petchxig"
+                      href={"https://www.instagram.com/petchxig"}
+                    >
                       <div className="rounded-full bg-content1 p-4 hover:text-foreground">
                         <TbBrandInstagram size={40} />
                       </div>

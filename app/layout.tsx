@@ -8,7 +8,7 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Petchx",
-  description: "Petchx - Fullstack Developer",
+  description: "Petchx - Full Stack Developer | Panuphong Burakitphachai",
   icons: "./assets/favicon.ico",
 };
 
