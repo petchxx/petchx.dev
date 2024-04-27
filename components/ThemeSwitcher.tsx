@@ -16,21 +16,12 @@ export function ThemeSwitcher() {
   if (!mounted) return null;
 
   return theme === "light" ? (
-    <Button isIconOnly variant="light">
-      <TbSun
-        className="cursor-pointer text-foreground"
-        size={25}
-        onClick={() => setTheme("dark")}
-      />
+    <Button isIconOnly variant="light" onClick={() => setTheme("dark")}>
+      <TbSun className="cursor-pointer text-foreground" size={20} />
     </Button>
   ) : (
-    <Button isIconOnly variant="light">
-      <TbMoon
-        className="cursor-pointer text-foreground"
-        size={25}
-        onClick={() => setTheme("light")}
-      />
+    <Button isIconOnly variant="light" onClick={() => setTheme("light")}>
+      <TbMoon className="cursor-pointer text-foreground" size={20} />
     </Button>
   );
 }
-
