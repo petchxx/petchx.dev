@@ -5,7 +5,7 @@ import { NavbarContent, NavbarItem } from "@nextui-org/react";
 
 export default function Footer() {
   return (
-    <footer className="h-96 flex flex-col justify-center items-center gap-6">
+    <footer className="flex p-6 mt-20 flex-col justify-center items-center gap-6">
       <Link href="#" className="flex text-bold text-black">
         <Image
           src="/assets/petchx-dark.svg"
