@@ -213,7 +213,7 @@ export default function HomePage({}: Props) {
           initial="init"
           animate="end"
         >
-          <Link href={"/services"}>
+          <Link href={"/"}>
             <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
               <Card className="rounded-3xl h-full">
                 <CardBody className="justify-center items-center">

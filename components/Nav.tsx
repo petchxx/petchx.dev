@@ -77,15 +77,6 @@ export default function Nav({ index }: { index: string }) {
             Projects
           </Link>
         </NavbarItem>
-        <NavbarItem isActive={index === "services"}>
-          <Link
-            color={index === "services" ? "primary" : "foreground"}
-            href="/services"
-            className="hover:text-primary cursor-pointer"
-          >
-            Services
-          </Link>
-        </NavbarItem>
         <NavbarItem isActive={index === "contact"}>
           <Link
             color={index === "contact" ? "primary" : "foreground"}
@@ -96,9 +87,20 @@ export default function Nav({ index }: { index: string }) {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="end">
+      <NavbarContent className="gap-2" justify="end">
         <NavbarItem className="">
           <ThemeSwitcher />
+        </NavbarItem>
+        <NavbarItem className="flex md:hidden">
+          <Button
+            as={Link}
+            variant="flat"
+            color="primary"
+            href="https://github.com/petchxx"
+            isIconOnly
+          >
+            <TbBrandGithub size={20} />
+          </Button>
         </NavbarItem>
         <NavbarItem className="hidden md:flex">
           <Button
@@ -141,14 +143,6 @@ export default function Nav({ index }: { index: string }) {
             size="lg"
           >
             Projects
-          </Link>
-          <Link
-            color={index === "services" ? "primary" : "foreground"}
-            className="w-full"
-            href="/services"
-            size="lg"
-          >
-            Services
           </Link>
           <Link
             color={index === "contact" ? "primary" : "foreground"}
