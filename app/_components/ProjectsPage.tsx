@@ -1,5 +1,5 @@
 "use client";
-import Nav from "@/components/Nav";
+import Nav from "./Nav";
 import Image from "next/image";
 import { Card, CardFooter } from "@nextui-org/card";
 import React from "react";

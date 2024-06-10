@@ -77,6 +77,15 @@ export default function Nav({ index }: { index: string }) {
             Projects
           </Link>
         </NavbarItem>
+        <NavbarItem isActive={index === "services"}>
+          <Link
+            color={index === "services" ? "primary" : "foreground"}
+            href="/services"
+            className="hover:text-primary cursor-pointer"
+          >
+            Services
+          </Link>
+        </NavbarItem>
         <NavbarItem isActive={index === "contact"}>
           <Link
             color={index === "contact" ? "primary" : "foreground"}

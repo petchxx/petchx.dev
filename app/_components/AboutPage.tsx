@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Nav from "@/components/Nav";
+import Nav from "./Nav";
 import {
   Button,
   Card,
@@ -127,4 +127,3 @@ export default function AboutPage({}: Props) {
     </main>
   );
 }
-

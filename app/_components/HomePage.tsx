@@ -15,7 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import info from "@/public/info.json";
 import { useState } from "react";
-import Nav from "@/components/Nav";
+import Nav from "./Nav";
 import {
   TbCode,
   TbDeviceDesktopCode,
@@ -213,7 +213,7 @@ export default function HomePage({}: Props) {
           initial="init"
           animate="end"
         >
-          <Link href={"/"}>
+          <Link href={"/services"}>
             <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
               <Card className="rounded-3xl h-full">
                 <CardBody className="justify-center items-center">

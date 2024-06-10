@@ -1,10 +1,6 @@
-import React from 'react'
-import AboutPage from '@/components/AboutPage';
-
+import React from "react";
+import AboutPage from "../_components/AboutPage";
 
 export default function About() {
-
-    return (
-        <AboutPage />
-    )
+  return <AboutPage />;
 }
