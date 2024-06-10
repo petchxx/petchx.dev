@@ -20,10 +20,12 @@ export default function ProjectsPage({}: Props) {
       name: "VENUS",
       description: "Clinic Management Platform",
       color: "#3c61dd",
+      url: "https://getvenus.app",
     },
     {
       name: "B3lletattoo",
       description: "Tattoo Studio Website",
+      url: "https://b3loved-s.web.app",
       image: "/assets/b3lletattoo.png",
     },
   ];
