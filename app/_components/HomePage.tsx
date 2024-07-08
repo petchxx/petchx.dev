@@ -90,7 +90,7 @@ export default function HomePage({}: Props) {
                   >
                     <Image
                       src="/assets/petchx.png"
-                      className=" pointer-events-none object-cover"
+                      className=" pointer-events-none object-cover rounded-tl-3xl rounded-br-3xl"
                       fill={true}
                       alt="Petchx Panuphong Burakitphachai"
                       onLoad={() => setImageLoaded(true)}

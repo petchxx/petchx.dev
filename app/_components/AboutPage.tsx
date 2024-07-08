@@ -41,7 +41,7 @@ export default function AboutPage({}: Props) {
             >
               <Image
                 src="/assets/petchx2.png"
-                className="pointer-events-none"
+                className="pointer-events-none rounded-3xl"
                 fill={true}
                 onLoad={() => setImageLoaded(true)}
                 onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
