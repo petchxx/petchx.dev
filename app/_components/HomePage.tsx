@@ -1,6 +1,6 @@
 "use client";
 import { Icon } from "@iconify/react";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaLine } from "react-icons/fa6";
@@ -100,6 +100,22 @@ export default function HomePage({}: Props) {
     transition: { duration: 0.5, type: "spring" },
   };
 
+  const [imageHover, setImageHover] = useState(false);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileOrTablet(window.innerWidth <= 1038);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   return (
     <main className="">
       <Nav index="home" />
@@ -125,59 +141,84 @@ export default function HomePage({}: Props) {
           <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
             <Card className="rounded-3xl cursor-default h-full p-4">
               <CardBody className="justify-center p-4">
-                <div
-                  className="flex flex-col group sm:flex-row justify-center items-center sm:items-start gap-4  "
-                  style={{
-                    perspective: "600px",
-                  }}
-                >
-                  <motion.div
-                    initial={{
-                      rotateY: 0,
-                    }}
-                    animate={{
-                      rotateY: 10,
-                    }}
-                    transition={{
-                      type: "spring",
-                      damping: 18,
-                      ease: "easeOut",
-                      duration: 0.5,
-                    }}
-                    whileHover={{
-                      rotateY: -190,
-                      transition: {
+                <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-4">
+                  <div
+                    className="w-52 h-52 "
+                    onMouseEnter={() =>
+                      !isMobileOrTablet && setImageHover(true)
+                    }
+                    onMouseLeave={() =>
+                      !isMobileOrTablet && setImageHover(false)
+                    }
+                    style={{ perspective: "500px" }}
+                  >
+                    <motion.div
+                      initial={{ rotateY: 0 }}
+                      animate={{
+                        rotateY: isMobileOrTablet ? 0 : imageHover ? -190 : 10,
+                      }}
+                      transition={{
                         type: "spring",
                         damping: 18,
-                        duration: 0.5,
-                      },
-                    }}
-                  >
-                    <Skeleton
-                      className="h-52 min-w-52 rounded-tl-3xl rounded-br-3xl"
-                      isLoaded={imageLoaded}
+                        ease: "easeOut",
+                      }}
+                      // whileHover={{
+                      //   rotateY: -190,
+                      //   transition: {
+                      //     type: "spring",
+                      //     damping: 18,
+                      //     duration: 0.5,
+                      //   },
+                      // }}
                     >
-                      <div className="bg-content1 hidden group-hover:flex group-hover:opacity-100 transition-opacity duration-300 shadow-medium w-52 h-52 rounded-3xl">
-                        <Image
-                          src="/assets/logo.svg"
-                          className=" pointer-events-none ring-offset-default-foreground"
-                          alt="Petchx Panuphong Burakitphachai"
-                          width={100}
-                          height={100}
-                          onLoad={() => setImageLoaded(true)}
-                          onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
-                        />
-                      </div>
-                      <Image
-                        src="/assets/petchx.png"
-                        className=" pointer-events-none group-hover:opacity-0 transition-opacity duration-300 object-cover rounded-3xl "
-                        fill={true}
-                        alt="Petchx Panuphong Burakitphachai"
-                        onLoad={() => setImageLoaded(true)}
-                        onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
-                      />
-                    </Skeleton>
-                  </motion.div>
+                      <Skeleton
+                        className="h-52 min-w-52 group rounded-tl-3xl rounded-br-3xl"
+                        isLoaded={imageLoaded}
+                      >
+                        {/* <div className="bg-content1 hidden group-hover:flex group-hover:opacity-100 justify-center items-center shadow-medium w-52 h-52 rounded-3xl"> */}
+                        {/*   <Image */}
+                        {/*     src="/assets/logo.svg" */}
+                        {/*     className="pointer-events-none ring-offset-default-foreground scale-x-[-1]" */}
+                        {/*     alt="Petchx Panuphong Burakitphachai" */}
+                        {/*     width={100} */}
+                        {/*     height={100} */}
+                        {/*     onLoad={() => setImageLoaded(true)} */}
+                        {/*     onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true */}
+                        {/*   /> */}
+                        {/* </div> */}
+                        {/* <Image */}
+                        {/*   src="/assets/petchx.png" */}
+                        {/*   className="pointer-events-none object-cover rounded-3xl" */}
+                        {/*   fill={true} */}
+                        {/*   alt="Petchx Panuphong Burakitphachai" */}
+                        {/*   onLoad={() => setImageLoaded(true)} */}
+                        {/*   onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true */}
+                        {/* /> */}
+                        {imageHover ? (
+                          <div className="flex justify-center items-center shadow-medium w-full h-full rounded-3xl absolute top-0 left-0 bg-content1">
+                            <Image
+                              src="/assets/logo.svg"
+                              className="pointer-events-none ring-offset-default-foreground scale-x-[-1]"
+                              alt="Petchx Panuphong Burakitphachai"
+                              width={100}
+                              height={100}
+                              onLoad={() => setImageLoaded(true)}
+                              onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
+                            />
+                          </div>
+                        ) : (
+                          <Image
+                            src="/assets/petchx.png"
+                            className="pointer-events-none object-cover rounded-3xl w-full h-full"
+                            fill={true}
+                            alt="Petchx Panuphong Burakitphachai"
+                            onLoad={() => setImageLoaded(true)}
+                            onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
+                          />
+                        )}
+                      </Skeleton>
+                    </motion.div>
+                  </div>
 
                   <CardFooter className="justify-start flex-col w-full items-start">
                     <h1 className="mt-2 opacity-50">{info.role}</h1>
