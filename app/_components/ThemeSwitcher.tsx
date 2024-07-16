@@ -1,11 +1,16 @@
 "use client";
 
-import { Button } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { TbMoon, TbSun } from "react-icons/tb";
+import { Icon } from "@iconify/react";
+import { Button, Switch } from "@nextui-org/react";
 
-export function ThemeSwitcher() {
+type Props = {
+  size?: "sm" | "md" | "lg";
+  isSwitch?: boolean;
+};
+
+export function ThemeSwitcher({ size, isSwitch }: Props) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -15,23 +20,76 @@ export function ThemeSwitcher() {
 
   if (!mounted) return null;
 
-  return theme === "light" ? (
-    <Button
-      aria-label="Dark Theme"
-      isIconOnly
-      variant="light"
-      onClick={() => setTheme("dark")}
-    >
-      <TbSun className="cursor-pointer text-foreground" size={20} />
-    </Button>
-  ) : (
-    <Button
-      aria-label="Light Theme"
-      isIconOnly
-      variant="light"
-      onClick={() => setTheme("light")}
-    >
-      <TbMoon className="cursor-pointer text-foreground" size={20} />
-    </Button>
+  return (
+    <div>
+      {isSwitch ? (
+        <Switch
+          isSelected={theme == "dark"}
+          size="lg"
+          // thumbIcon={({ isSelected, className }) =>
+          //   isSelected ? (
+          //     <Icon
+          //       icon="line-md:sun-rising-loop"
+          //       className="text-primary"
+          //       fontSize={24}
+          //     />
+          //   ) : (
+          //     <Icon
+          //       icon="line-md:moon-rising-loop"
+          //       className="text-primary"
+          //       fontSize={24}
+          //     />
+          //   )
+          // }
+          startContent={
+            <Icon
+              icon="line-md:sun-rising-loop"
+              className="text-primary"
+              fontSize={24}
+            />
+          }
+          endContent={
+            <Icon
+              icon="line-md:moon-rising-loop"
+              className="text-primary"
+              fontSize={24}
+            />
+          }
+          onValueChange={(e) => {
+            if (e == true) {
+              setTheme("dark");
+            } else {
+              setTheme("light");
+            }
+          }}
+        />
+      ) : theme == "light" ? (
+        <Button
+          isIconOnly
+          size={size ?? "md"}
+          variant="light"
+          onClick={() => setTheme("dark")}
+        >
+          <Icon
+            icon="line-md:moon-rising-loop"
+            className="text-foreground"
+            fontSize={24}
+          />
+        </Button>
+      ) : (
+        <Button
+          size={size ?? "md"}
+          isIconOnly
+          variant="light"
+          onClick={() => setTheme("light")}
+        >
+          <Icon
+            icon="line-md:sun-rising-loop"
+            className="text-foreground"
+            fontSize={24}
+          />
+        </Button>
+      )}
+    </div>
   );
 }

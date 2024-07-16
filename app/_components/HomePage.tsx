@@ -24,6 +24,7 @@ import {
   TbBrandGithub,
   TbBrandInstagram,
 } from "react-icons/tb";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 type Props = {};
 
@@ -131,7 +132,7 @@ export default function HomePage({}: Props) {
                   >
                     <Image
                       src="/assets/petchx.png"
-                      className=" pointer-events-none object-cover rounded-tl-3xl rounded-br-3xl"
+                      className=" pointer-events-none object-cover rounded-tl-3xl rounded-br-3xl "
                       fill={true}
                       alt="Petchx Panuphong Burakitphachai"
                       onLoad={() => setImageLoaded(true)}
@@ -170,12 +171,12 @@ export default function HomePage({}: Props) {
                 <motion.p
                   variants={marqueeVariants}
                   animate="animate"
-                  className="whitespace-nowrap text-foreground/50 tracking-widest text-sm"
+                  className="whitespace-nowrap text-foreground/50 tracking-widest text-xs"
                 >
                   HTML • CSS • JAVASCRIPT • TYPESCRIPT • REACT • NEXTJS •
-                  TAILWINDCSS • PRISMA • DRIZZLE • FRAMER-MOTION • T3 • VITE •
+                  TAILWINDCSS • PRISMA • DRIZZLE • FRAMERMOTION • T3 • VITE •
                   VUE • PHP • SQL • PYTHON • JAVA • FLUTTER • DART • FIREBASE •
-                  NODEJS • EXPRESS
+                  NODEJS • EXPRESS • POSTGRES • MYSQL • FIGMA
                 </motion.p>
               </CardBody>
             </Card>
@@ -210,13 +211,15 @@ export default function HomePage({}: Props) {
               <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
                 <Card className="rounded-3xl col-span-1 h-56 ">
                   <CardBody className="items-center justify-center">
-                    <Image
-                      src="/assets/logo.gif"
-                      className="pointer-events-none"
-                      width={126}
-                      height={126}
-                      alt="Petchx Panuphong Burakitphachai"
-                    />
+                    <motion.div whileHover={zoomIn} animate="animate">
+                      <Image
+                        src="/assets/logo.gif"
+                        className="pointer-events-none"
+                        width={126}
+                        height={126}
+                        alt="Petchx Panuphong Burakitphachai"
+                      />
+                    </motion.div>
                     <CardFooter className="justify-start flex-col items-start">
                       <h1 className="opacity-50 text-xs">SHOW CASE</h1>
                       <h1 className="text-xl">Projects</h1>
@@ -236,20 +239,22 @@ export default function HomePage({}: Props) {
           initial="init"
           animate="end"
         >
-          <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
-            <Card className="rounded-3xl h-full ">
-              <CardBody className="justify-center items-center">
-                <div className="h-32 flex gap-10 text-primary items-center">
-                  <TbCode size={50} />
-                  <TbDeviceMobileCode size={50} />
-                </div>
-                <CardFooter className="justify-start flex-col items-start">
-                  <h1 className="opacity-50 text-xs">SPECIALIAZATION</h1>
-                  <h1 className="text-xl">Services</h1>
-                </CardFooter>
-              </CardBody>
-            </Card>
-          </div>
+          <Link href={"/services"}>
+            <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
+              <Card className="rounded-3xl h-full ">
+                <CardBody className="justify-center items-center">
+                  <div className="h-32 flex gap-10 text-primary items-center">
+                    <TbCode size={50} />
+                    <TbDeviceMobileCode size={50} />
+                  </div>
+                  <CardFooter className="justify-start flex-col items-start">
+                    <h1 className="opacity-50 text-xs">SPECIALIAZATION</h1>
+                    <h1 className="text-xl">Services</h1>
+                  </CardFooter>
+                </CardBody>
+              </Card>
+            </div>
+          </Link>
         </motion.div>
 
         <motion.div
@@ -258,12 +263,12 @@ export default function HomePage({}: Props) {
           initial="init"
           animate="end"
         >
-          <Link href={"/services"}>
+          <Link href={"/contact"}>
             <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
               <Card className="rounded-3xl h-full">
                 <CardBody className="justify-center items-center">
-                  <div className="px-4 w-full">
-                    <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-6">
+                  <div className="p-2 w-full">
+                    <div className="h-28 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-6 w-full">
                       <motion.div
                         aria-label="Petchxx"
                         onClick={() => {
@@ -271,7 +276,7 @@ export default function HomePage({}: Props) {
                         }}
                         whileHover={zoomIn}
                       >
-                        <div className="rounded-full bg-black p-4 text-white">
+                        <div className="cursor-pointer rounded-full bg-content1 p-4 text-primary hover:bg-black hover:text-white">
                           <Icon icon="line-md:github-loop" fontSize={32} />
                         </div>
                       </motion.div>
@@ -283,7 +288,8 @@ export default function HomePage({}: Props) {
                       >
                         <motion.div
                           whileHover={zoomIn}
-                          className="bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full  p-4 text-white"
+                          // className="cursor-pointer bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full  p-4 text-white"
+                          className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-gradient-to-r hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:text-white "
                         >
                           <Icon icon="line-md:instagram" fontSize={32} />
                         </motion.div>
@@ -295,7 +301,11 @@ export default function HomePage({}: Props) {
                         }}
                         whileHover={zoomIn}
                       >
-                        <div className="rounded-full bg-blue-500 p-4 text-white">
+                        <div
+                          // className="cursor-pointer rounded-full bg-blue-500 p-4 text-white"
+                          // className="p-4 bg-content1 rounded-full cursor-pointer"
+                          className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white "
+                        >
                           <Icon icon="line-md:email" fontSize={32} />
                         </div>
                       </motion.div>
@@ -306,7 +316,10 @@ export default function HomePage({}: Props) {
                         }}
                         whileHover={zoomIn}
                       >
-                        <div className="rounded-full bg-[#06c755] p-4 text-white">
+                        <div
+                          // className="cursor-pointer rounded-full bg-[#06c755] p-4 text-white"
+                          className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-[#06c755] hover:text-white "
+                        >
                           <Icon icon="ri:line-fill" fontSize={32} />
                         </div>
                       </motion.div>
@@ -329,45 +342,46 @@ export default function HomePage({}: Props) {
           initial="init"
           animate="end"
         >
-          <Link href={"/contact"}>
-            <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
-              <Card
-                className="rounded-3xl h-full"
-                onClick={() => {
-                  router.push("/contact");
-                }}
-              >
-                <CardBody className="justify-center items-center">
-                  <div className="px-4 w-full">
-                    <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-4">
-                      <div
-                        className="rounded-full bg-content1 p-5 hover:text-foreground"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          router.push("mailto:petchxpanuphong@gmail.com");
-                        }}
-                      >
-                        <FaEnvelope size={25} />
-                      </div>
-                      <div
-                        className="rounded-full bg-content1 p-5 hover:text-foreground"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          router.push("https://lin.ee/1kSm3fq");
-                        }}
-                      >
-                        <FaLine size={25} />
-                      </div>
-                    </div>
+          {/* <Link href={"/contact"}> */}
+          <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
+            <Card
+              className="rounded-3xl h-full"
+              onClick={() => {
+                router.push("/contact");
+              }}
+            >
+              <CardBody className="justify-center items-center">
+                <div className="x-2 w-full">
+                  <div className="h-28 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-4">
+                    <ThemeSwitcher isSwitch={true} />
+                    {/* <div */}
+                    {/*   className="rounded-full bg-content1 p-5 hover:text-foreground" */}
+                    {/*   onClick={(e) => { */}
+                    {/*     e.preventDefault(); */}
+                    {/*     router.push("mailto:petchxpanuphong@gmail.com"); */}
+                    {/*   }} */}
+                    {/* > */}
+                    {/*   <FaEnvelope size={25} /> */}
+                    {/* </div> */}
+                    {/* <div */}
+                    {/*   className="rounded-full bg-content1 p-5 hover:text-foreground" */}
+                    {/*   onClick={(e) => { */}
+                    {/*     e.preventDefault(); */}
+                    {/*     router.push("https://lin.ee/1kSm3fq"); */}
+                    {/*   }} */}
+                    {/* > */}
+                    {/*   <FaLine size={25} /> */}
+                    {/* </div> */}
                   </div>
-                  <CardFooter className="justify-start flex-col items-start">
-                    <h1 className="opacity-50 text-xs">START A PROJECT</h1>
-                    <h1 className="text-xl">Contact</h1>
-                  </CardFooter>
-                </CardBody>
-              </Card>
-            </div>
-          </Link>
+                </div>
+                <CardFooter className="justify-start flex-col items-start">
+                  <h1 className="opacity-50 text-xs">SWITCH THEMER</h1>
+                  <h1 className="text-xl">Dark mode</h1>
+                </CardFooter>
+              </CardBody>
+            </Card>
+          </div>
+          {/* </Link> */}
         </motion.div>
 
         <motion.div
