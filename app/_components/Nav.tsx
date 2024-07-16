@@ -25,7 +25,7 @@ export default function Nav({ index }: { index: string }) {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
-      className="fixed "
+      className="fixed p-2"
       // shouldHideOnScroll
     >
       <NavbarContent>

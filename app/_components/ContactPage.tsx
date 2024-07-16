@@ -15,9 +15,12 @@ type Props = {};
 
 export default function ContactPage({}: Props) {
   return (
-    <main className="w-full flex-col flex justify-center items-center mt-20 p-6">
+    <main
+      className="w-full flex-col flex justify-center items-center mt-20 p-6"
+      style={{ perspective: "1000px" }}
+    >
       <motion.div
-        initial={{ rotateX: -100, opacity: 0 }}
+        initial={{ rotateX: 100, opacity: 0 }}
         animate={{ rotateX: 0, opacity: 1 }}
         transition={{ type: "tween" }}
         className="w-full max-w-xl"

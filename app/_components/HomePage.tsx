@@ -122,7 +122,7 @@ export default function HomePage({}: Props) {
 
       {/* BODY */}
       {/* First row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl p-4 justify-center mx-auto mt-16">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl p-4 justify-center mx-auto mt-20">
         <motion.div
           className="col-span-2 order-1"
           initial={{
@@ -133,8 +133,8 @@ export default function HomePage({}: Props) {
           }}
           transition={{
             type: "spring",
-            damping: 18,
             ease: "easeOut",
+            damping: 18,
             duration: 0.5,
           }}
         >
@@ -155,7 +155,7 @@ export default function HomePage({}: Props) {
                     <motion.div
                       initial={{ rotateY: 0 }}
                       animate={{
-                        rotateY: isMobileOrTablet ? 0 : imageHover ? -190 : 10,
+                        rotateY: isMobileOrTablet ? 0 : imageHover ? -180 : 0,
                       }}
                       transition={{
                         type: "spring",
