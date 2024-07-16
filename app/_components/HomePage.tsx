@@ -40,7 +40,7 @@ export default function HomePage({}: Props) {
       opacity: 1,
       transition: {
         type: "spring",
-        damping: 18,
+        damping: 16,
         ease: "easeOut",
         duration: 0.5,
         delay: 1,
@@ -64,6 +64,35 @@ export default function HomePage({}: Props) {
   };
 
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  const marqueeVariants = {
+    animate: {
+      x: [0, -1000],
+      transition: {
+        x: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 7,
+          ease: "linear",
+          delay: 2,
+        },
+      },
+    },
+  };
+
+  const flyingIcons = {
+    animate: {
+      y: [0, -10, 0],
+      transition: {
+        y: {
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 1,
+          ease: "easeInOut",
+        },
+      },
+    },
+  };
 
   return (
     <main className="">
@@ -132,8 +161,17 @@ export default function HomePage({}: Props) {
         >
           <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
             <Card className="rounded-full h-full ">
-              <CardBody className="items-center justify-center">
-                Fullstack Developer
+              <CardBody className="items-start justify-start overflow-hidden">
+                <motion.p
+                  variants={marqueeVariants}
+                  animate="animate"
+                  className="whitespace-nowrap text-foreground/50 tracking-widest text-sm"
+                >
+                  HTML • CSS • JAVASCRIPT • TYPESCRIPT • REACT • NEXTJS •
+                  TAILWINDCSS • PRISMA • DRIZZLE • FRAMER-MOTION • T3 • VITE •
+                  VUE • PHP • SQL • PYTHON • JAVA • FLUTTER • DART • FIREBASE •
+                  NODEJS • EXPRESS
+                </motion.p>
               </CardBody>
             </Card>
           </div>
