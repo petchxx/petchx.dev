@@ -32,7 +32,7 @@ export default function ProjectsPage({}: Props) {
   return (
     <main className="flex items-center flex-col ">
       <Nav index="projects" />
-      <div className="p-6 max-w-screen-xl flex flex-col  items-center">
+      <div className="p-6 max-w-screen-xl mt-20 flex flex-col  items-center">
         <h1 className="mt-6 text-6xl font-bold flex">Projects</h1>
         <p className="mt-6 text-lg max-w-xl text-center">
           The following are some of the projects I have worked on. Some of them

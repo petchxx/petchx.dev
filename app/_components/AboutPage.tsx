@@ -28,7 +28,7 @@ export default function AboutPage({}: Props) {
   return (
     <main>
       <Nav index="about" />
-      <div className="max-w-7xl justify-start md:flex mx-auto mt-4 p-4 gap-12">
+      <div className="max-w-7xl justify-start md:flex mx-auto mt-24 p-4 gap-12">
         <motion.div
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

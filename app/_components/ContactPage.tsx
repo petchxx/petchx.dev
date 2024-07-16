@@ -15,7 +15,7 @@ type Props = {};
 
 export default function ContactPage({}: Props) {
   return (
-    <main className="w-full flex-col flex justify-center items-center p-6">
+    <main className="w-full flex-col flex justify-center items-center mt-20 p-6">
       <motion.div
         initial={{ rotateX: -100, opacity: 0 }}
         animate={{ rotateX: 0, opacity: 1 }}

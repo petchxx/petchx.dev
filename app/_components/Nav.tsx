@@ -25,8 +25,8 @@ export default function Nav({ index }: { index: string }) {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
-      className="bg-white dark:bg-black"
-      shouldHideOnScroll
+      className="fixed "
+      // shouldHideOnScroll
     >
       <NavbarContent>
         <NavbarBrand>
@@ -34,15 +34,15 @@ export default function Nav({ index }: { index: string }) {
             <Image
               src="/assets/petchx-dark.svg"
               className="hidden dark:block pointer-events-none"
-              width={120}
-              height={43}
+              width={124}
+              height={45}
               alt="Petchx Panuphong Burakitphachai"
             />
             <Image
               src="/assets/petchx-light.svg"
               className="block dark:hidden pointer-events-none"
-              width={120}
-              height={43}
+              width={124}
+              height={45}
               alt="Petchx Panuphong Burakitphachai"
             />
           </Link>

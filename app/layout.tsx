@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Footer from "./_components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { GeistSans } from "geist/font/sans";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={outfit.className}>
+      <body className={`${GeistSans.variable}`}>
         <Providers>
           {children}
           <Analytics />

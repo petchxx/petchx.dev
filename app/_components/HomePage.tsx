@@ -39,8 +39,11 @@ export default function HomePage({}: Props) {
       y: "0",
       opacity: 1,
       transition: {
-        type: "tween",
-        delay: 0.5,
+        type: "spring",
+        damping: 18,
+        ease: "easeOut",
+        duration: 0.5,
+        delay: 1,
       },
     },
   };
@@ -52,9 +55,10 @@ export default function HomePage({}: Props) {
     end: {
       opacity: 1,
       transition: {
-        type: "tween",
-        delay: 1,
-        duration: 1,
+        type: "spring",
+        damping: 18,
+        delay: 2,
+        duration: 0.5,
       },
     },
   };
@@ -67,7 +71,7 @@ export default function HomePage({}: Props) {
 
       {/* BODY */}
       {/* First row */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl p-4 justify-center mx-auto mt-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl p-4 justify-center mx-auto mt-16">
         <motion.div
           className="col-span-2 order-1"
           initial={{
@@ -77,15 +81,18 @@ export default function HomePage({}: Props) {
             x: "0",
           }}
           transition={{
-            type: "tween",
+            type: "spring",
+            damping: 18,
+            ease: "easeOut",
+            duration: 0.5,
           }}
         >
           <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
             <Card className="rounded-3xl cursor-default h-full p-4">
               <CardBody className="justify-center p-4">
-                <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-6 ">
+                <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-4 ">
                   <Skeleton
-                    className="h-56 min-w-56 rounded-tl-3xl rounded-br-3xl"
+                    className="h-52 min-w-52 rounded-tl-3xl rounded-br-3xl"
                     isLoaded={imageLoaded}
                   >
                     <Image
@@ -109,14 +116,19 @@ export default function HomePage({}: Props) {
           </div>
         </motion.div>
         <motion.div
-          className="col-span-2 justify-between flex flex-col gap-6 order-2"
+          className="col-span-2 justify-between flex flex-col gap-4 order-2"
           initial={{
             x: "100vw",
           }}
           animate={{
             x: "0",
           }}
-          transition={{ type: "tween" }}
+          transition={{
+            type: "spring",
+            damping: 18,
+            ease: "easeOut",
+            duration: 0.5,
+          }}
         >
           <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
             <Card className="rounded-full h-full ">
@@ -125,10 +137,10 @@ export default function HomePage({}: Props) {
               </CardBody>
             </Card>
           </div>
-          <div className="grid-cols-1 sm:grid-cols-2 grid gap-6 order-3">
+          <div className="grid-cols-1 sm:grid-cols-2 grid gap-4 order-3">
             <Link href={"/about"}>
               <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
-                <Card className="rounded-3xl col-span-1 h-60 ">
+                <Card className="rounded-3xl col-span-1 h-56 ">
                   <CardBody className="items-center justify-center">
                     <Image
                       src="/assets/memoji.png"
@@ -147,7 +159,7 @@ export default function HomePage({}: Props) {
             </Link>
             <Link href={"/projects"}>
               <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
-                <Card className="rounded-3xl col-span-1 h-60 ">
+                <Card className="rounded-3xl col-span-1 h-56 ">
                   <CardBody className="items-center justify-center">
                     <Image
                       src="/assets/logo.gif"
@@ -167,10 +179,10 @@ export default function HomePage({}: Props) {
           </div>
         </motion.div>
 
-        {/* <div className="col-span-3 grid-cols-3 grid gap-6">
+        {/* <div className="col-span-3 grid-cols-3 grid gap-4">
           </div> */}
         <motion.div
-          className="col-span-2 sm:col-span-1 h-60 order-5 lg:order-4"
+          className="col-span-2 sm:col-span-1 h-56 order-5 lg:order-4"
           variants={moveUp}
           initial="init"
           animate="end"
@@ -208,7 +220,7 @@ export default function HomePage({}: Props) {
         </motion.div>
 
         <motion.div
-          className="col-span-2 lg:col-span-2 h-60 order-4 lg:order-5"
+          className="col-span-2 lg:col-span-2 h-56 order-4 lg:order-5"
           variants={moveUp}
           initial="init"
           animate="end"
@@ -234,7 +246,7 @@ export default function HomePage({}: Props) {
         </motion.div>
 
         <motion.div
-          className="col-span-2 sm:col-span-1 h-60 order-6 "
+          className="col-span-2 sm:col-span-1 h-56 order-6 "
           variants={moveUp}
           initial="init"
           animate="end"
@@ -281,7 +293,7 @@ export default function HomePage({}: Props) {
         </motion.div>
 
         <motion.div
-          className="col-span-2 0 h-60 order-7"
+          className="col-span-2 0 h-56 order-7"
           variants={fadeIn}
           initial="init"
           animate="end"
@@ -300,7 +312,7 @@ export default function HomePage({}: Props) {
           </div>
         </motion.div>
         <motion.div
-          className=" col-span-2 h-60 order-8"
+          className=" col-span-2 h-56 order-8"
           variants={fadeIn}
           initial="init"
           animate="end"
