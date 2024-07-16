@@ -263,77 +263,77 @@ export default function HomePage({}: Props) {
           initial="init"
           animate="end"
         >
-          <Link href={"/contact"}>
-            <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
-              <Card className="rounded-3xl h-full">
-                <CardBody className="justify-center items-center">
-                  <div className="p-2 w-full">
-                    <div className="h-28 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-6 w-full">
+          {/* <Link href={"/contact"}> */}
+          <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
+            <Card className="rounded-3xl h-full">
+              <CardBody className="justify-center items-center">
+                <div className="p-2 w-full">
+                  <div className="h-28 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-6 w-full">
+                    <motion.div
+                      aria-label="Petchxx"
+                      onClick={() => {
+                        router.push("https://github.com/petchxx");
+                      }}
+                      whileHover={zoomIn}
+                    >
+                      <div className="cursor-pointer rounded-full bg-content1 p-4 text-primary hover:bg-black hover:text-white">
+                        <Icon icon="line-md:github-loop" fontSize={32} />
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      aria-label="Petchxig"
+                      onClick={() => {
+                        router.push("https://www.instagram.com/petchxig");
+                      }}
+                    >
                       <motion.div
-                        aria-label="Petchxx"
-                        onClick={() => {
-                          router.push("https://github.com/petchxx");
-                        }}
                         whileHover={zoomIn}
+                        // className="cursor-pointer bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full  p-4 text-white"
+                        className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-gradient-to-r hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:text-white "
                       >
-                        <div className="cursor-pointer rounded-full bg-content1 p-4 text-primary hover:bg-black hover:text-white">
-                          <Icon icon="line-md:github-loop" fontSize={32} />
-                        </div>
+                        <Icon icon="line-md:instagram" fontSize={32} />
                       </motion.div>
-                      <motion.div
-                        aria-label="Petchxig"
-                        onClick={() => {
-                          router.push("https://www.instagram.com/petchxig");
-                        }}
+                    </motion.div>
+                    <motion.div
+                      aria-label="petchxpanuphong@gmail.com"
+                      onClick={() => {
+                        router.push("mailto:petchxpanuphong@gmail.com");
+                      }}
+                      whileHover={zoomIn}
+                    >
+                      <div
+                        // className="cursor-pointer rounded-full bg-blue-500 p-4 text-white"
+                        // className="p-4 bg-content1 rounded-full cursor-pointer"
+                        className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white "
                       >
-                        <motion.div
-                          whileHover={zoomIn}
-                          // className="cursor-pointer bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full  p-4 text-white"
-                          className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-gradient-to-r hover:from-[#833ab4] hover:via-[#fd1d1d] hover:to-[#fcb045] hover:text-white "
-                        >
-                          <Icon icon="line-md:instagram" fontSize={32} />
-                        </motion.div>
-                      </motion.div>
-                      <motion.div
-                        aria-label="petchxpanuphong@gmail.com"
-                        onClick={() => {
-                          router.push("mailto:petchxpanuphong@gmail.com");
-                        }}
-                        whileHover={zoomIn}
+                        <Icon icon="line-md:email" fontSize={32} />
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      aria-label="petchxpanuphong@gmail.com"
+                      onClick={() => {
+                        router.push("mailto:petchxpanuphong@gmail.com");
+                      }}
+                      whileHover={zoomIn}
+                    >
+                      <div
+                        // className="cursor-pointer rounded-full bg-[#06c755] p-4 text-white"
+                        className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-[#06c755] hover:text-white "
                       >
-                        <div
-                          // className="cursor-pointer rounded-full bg-blue-500 p-4 text-white"
-                          // className="p-4 bg-content1 rounded-full cursor-pointer"
-                          className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white "
-                        >
-                          <Icon icon="line-md:email" fontSize={32} />
-                        </div>
-                      </motion.div>
-                      <motion.div
-                        aria-label="petchxpanuphong@gmail.com"
-                        onClick={() => {
-                          router.push("mailto:petchxpanuphong@gmail.com");
-                        }}
-                        whileHover={zoomIn}
-                      >
-                        <div
-                          // className="cursor-pointer rounded-full bg-[#06c755] p-4 text-white"
-                          className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-[#06c755] hover:text-white "
-                        >
-                          <Icon icon="ri:line-fill" fontSize={32} />
-                        </div>
-                      </motion.div>
-                    </div>
+                        <Icon icon="ri:line-fill" fontSize={32} />
+                      </div>
+                    </motion.div>
                   </div>
+                </div>
 
-                  <CardFooter className="justify-start flex-col items-start">
-                    <h1 className="opacity-50 text-xs">STAY WITH ME</h1>
-                    <h1 className="text-xl">Profiles</h1>
-                  </CardFooter>
-                </CardBody>
-              </Card>
-            </div>
-          </Link>
+                <CardFooter className="justify-start flex-col items-start">
+                  <h1 className="opacity-50 text-xs">STAY WITH ME</h1>
+                  <h1 className="text-xl">Profiles</h1>
+                </CardFooter>
+              </CardBody>
+            </Card>
+          </div>
+          {/* </Link> */}
         </motion.div>
 
         <motion.div
