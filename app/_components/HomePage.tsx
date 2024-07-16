@@ -1,5 +1,5 @@
 "use client";
-
+import { Icon } from "@iconify/react";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -72,7 +72,7 @@ export default function HomePage({}: Props) {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 7,
+          duration: 10,
           ease: "linear",
           delay: 2,
         },
@@ -87,11 +87,16 @@ export default function HomePage({}: Props) {
         y: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 1,
+          duration: 4,
           ease: "easeInOut",
         },
       },
     },
+  };
+
+  const zoomIn = {
+    scale: 1.1,
+    transition: { duration: 0.5, type: "spring" },
   };
 
   return (
@@ -177,16 +182,22 @@ export default function HomePage({}: Props) {
           </div>
           <div className="grid-cols-1 sm:grid-cols-2 grid gap-4 order-3">
             <Link href={"/about"}>
-              <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
+              <div className="transition-transform h-full  duration-300 group hover:scale-[1.02]">
                 <Card className="rounded-3xl col-span-1 h-56 ">
                   <CardBody className="items-center justify-center">
-                    <Image
-                      src="/assets/memoji.png"
-                      className="pointer-events-none"
-                      width={126}
-                      height={126}
-                      alt="Petchx Panuphong Burakitphachai"
-                    />
+                    <motion.div
+                      variants={flyingIcons}
+                      whileHover={zoomIn}
+                      animate="animate"
+                    >
+                      <Image
+                        src="/assets/memoji.png"
+                        className="pointer-events-none "
+                        width={126}
+                        height={126}
+                        alt="Petchx Panuphong Burakitphachai"
+                      />
+                    </motion.div>
                     <CardFooter className="justify-start flex-col items-start p-4">
                       <h1 className="opacity-50 text-xs">MORE ABOUT ME</h1>
                       <h1 className="text-xl">About me</h1>
@@ -228,29 +239,13 @@ export default function HomePage({}: Props) {
           <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
             <Card className="rounded-3xl h-full ">
               <CardBody className="justify-center items-center">
-                <div className="px-4 w-full">
-                  <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-4">
-                    <Link
-                      aria-label="Petchxx"
-                      href={"https://github.com/petchxx"}
-                    >
-                      <div className="rounded-full bg-content1 p-4 hover:text-foreground">
-                        <TbBrandGithub size={40} />
-                      </div>
-                    </Link>
-                    <Link
-                      aria-label="Petchxig"
-                      href={"https://www.instagram.com/petchxig"}
-                    >
-                      <div className="rounded-full bg-content1 p-4 hover:text-foreground">
-                        <TbBrandInstagram size={40} />
-                      </div>
-                    </Link>
-                  </div>
+                <div className="h-32 flex gap-10 text-primary items-center">
+                  <TbCode size={50} />
+                  <TbDeviceMobileCode size={50} />
                 </div>
                 <CardFooter className="justify-start flex-col items-start">
-                  <h1 className="opacity-50 text-xs">STAY WITH ME</h1>
-                  <h1 className="text-xl">Profiles</h1>
+                  <h1 className="opacity-50 text-xs">SPECIALIAZATION</h1>
+                  <h1 className="text-xl">Services</h1>
                 </CardFooter>
               </CardBody>
             </Card>
@@ -267,15 +262,60 @@ export default function HomePage({}: Props) {
             <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
               <Card className="rounded-3xl h-full">
                 <CardBody className="justify-center items-center">
-                  <div className="h-32 flex gap-10 text-primary items-center">
-                    <TbCode size={50} />
-                    <TbDeviceMobileCode size={50} />
-                    <TbDeviceDesktopCode size={50} />
-                    <TbWorldCode size={50} />
+                  <div className="px-4 w-full">
+                    <div className="h-32 rounded-3xl bg-secondary flex items-center justify-center text-primary gap-6">
+                      <motion.div
+                        aria-label="Petchxx"
+                        onClick={() => {
+                          router.push("https://github.com/petchxx");
+                        }}
+                        whileHover={zoomIn}
+                      >
+                        <div className="rounded-full bg-black p-4 text-white">
+                          <Icon icon="line-md:github-loop" fontSize={32} />
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        aria-label="Petchxig"
+                        onClick={() => {
+                          router.push("https://www.instagram.com/petchxig");
+                        }}
+                      >
+                        <motion.div
+                          whileHover={zoomIn}
+                          className="bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-full  p-4 text-white"
+                        >
+                          <Icon icon="line-md:instagram" fontSize={32} />
+                        </motion.div>
+                      </motion.div>
+                      <motion.div
+                        aria-label="petchxpanuphong@gmail.com"
+                        onClick={() => {
+                          router.push("mailto:petchxpanuphong@gmail.com");
+                        }}
+                        whileHover={zoomIn}
+                      >
+                        <div className="rounded-full bg-blue-500 p-4 text-white">
+                          <Icon icon="line-md:email" fontSize={32} />
+                        </div>
+                      </motion.div>
+                      <motion.div
+                        aria-label="petchxpanuphong@gmail.com"
+                        onClick={() => {
+                          router.push("mailto:petchxpanuphong@gmail.com");
+                        }}
+                        whileHover={zoomIn}
+                      >
+                        <div className="rounded-full bg-[#06c755] p-4 text-white">
+                          <Icon icon="ri:line-fill" fontSize={32} />
+                        </div>
+                      </motion.div>
+                    </div>
                   </div>
+
                   <CardFooter className="justify-start flex-col items-start">
-                    <h1 className="opacity-50 text-xs">SPECIALIZATION</h1>
-                    <h1 className="text-xl">Service Offering</h1>
+                    <h1 className="opacity-50 text-xs">STAY WITH ME</h1>
+                    <h1 className="text-xl">Profiles</h1>
                   </CardFooter>
                 </CardBody>
               </Card>
