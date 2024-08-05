@@ -133,6 +133,7 @@ export default function HomePage({}: Props) {
           }}
           transition={{
             type: "spring",
+            damping: 18,
             ease: "easeOut",
             duration: 0.5,
           }}
