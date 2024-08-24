@@ -28,7 +28,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 
 type Props = {};
 
-export default function HomePage({}: Props) {
+export default function HomePage({ }: Props) {
   const router = useRouter();
 
   const moveUp = {
@@ -162,14 +162,14 @@ export default function HomePage({}: Props) {
                         damping: 18,
                         ease: "easeOut",
                       }}
-                      // whileHover={{
-                      //   rotateY: -190,
-                      //   transition: {
-                      //     type: "spring",
-                      //     damping: 18,
-                      //     duration: 0.5,
-                      //   },
-                      // }}
+                    // whileHover={{
+                    //   rotateY: -190,
+                    //   transition: {
+                    //     type: "spring",
+                    //     damping: 18,
+                    //     duration: 0.5,
+                    //   },
+                    // }}
                     >
                       <Skeleton
                         className="h-52 min-w-52 group rounded-tl-3xl rounded-br-3xl"
@@ -197,7 +197,7 @@ export default function HomePage({}: Props) {
                         {imageHover ? (
                           <div className="flex justify-center items-center shadow-medium w-full h-full rounded-3xl absolute top-0 left-0 bg-content1">
                             <Image
-                              src="/assets/logo.svg"
+                              src={"/assets/logo.svg"}
                               className="pointer-events-none ring-offset-default-foreground scale-x-[-1]"
                               alt="Petchx Panuphong Burakitphachai"
                               width={100}
@@ -208,7 +208,7 @@ export default function HomePage({}: Props) {
                           </div>
                         ) : (
                           <Image
-                            src="/assets/petchx.png"
+                            src={"/assets/petchx.png"}
                             className="pointer-events-none object-cover rounded-3xl w-full h-full"
                             fill={true}
                             alt="Petchx Panuphong Burakitphachai"

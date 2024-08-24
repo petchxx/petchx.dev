@@ -16,6 +16,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { TbBrandGithub } from "react-icons/tb";
+import Logo from "./Logo";
 
 export default function Nav({ index }: { index: string }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -26,26 +27,11 @@ export default function Nav({ index }: { index: string }) {
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
       className="fixed p-2"
-      // shouldHideOnScroll
+    // shouldHideOnScroll
     >
       <NavbarContent>
         <NavbarBrand>
-          <Link href="#">
-            <Image
-              src="/assets/petchx-dark.svg"
-              className="hidden dark:block pointer-events-none"
-              width={124}
-              height={45}
-              alt="Petchx Panuphong Burakitphachai"
-            />
-            <Image
-              src="/assets/petchx-light.svg"
-              className="block dark:hidden pointer-events-none"
-              width={124}
-              height={45}
-              alt="Petchx Panuphong Burakitphachai"
-            />
-          </Link>
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 

@@ -2,26 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { NavbarContent, NavbarItem } from "@nextui-org/react";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
     <footer className="flex p-6 mt-10 flex-col justify-center items-center gap-6">
-      <Link href="#" className="flex text-bold text-black">
-        <Image
-          src="/assets/petchx-dark.svg"
-          className="hidden dark:block pointer-events-none"
-          width={150}
-          height={50}
-          alt="Petchx Logo"
-        />
-        <Image
-          src="/assets/petchx-light.svg"
-          className="block dark:hidden pointer-events-none"
-          width={150}
-          height={50}
-          alt="Petchx Logo"
-        />
-      </Link>
+      <Logo />
       <div className="flex gap-6 ">
         <Link
           color="foreground"
