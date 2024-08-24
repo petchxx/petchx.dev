@@ -25,7 +25,8 @@ export default function RootLayout({
         <Providers>
           {children}
           <Analytics />
-          <Footer />
+          {/* <Footer /> */}
+          <div className="h-40"></div>
         </Providers>
       </body>
     </html>

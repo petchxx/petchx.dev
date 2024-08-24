@@ -6,7 +6,7 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="flex p-6 mt-10 flex-col justify-center items-center gap-6">
+    <footer className="flex p-6 mt-6 flex-col justify-center items-center gap-6">
       <Logo />
       <div className="flex gap-6 ">
         <Link
