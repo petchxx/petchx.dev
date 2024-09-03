@@ -198,10 +198,12 @@ export default function HomePage({}: Props) {
                           <div className="flex justify-center items-center shadow-medium w-full h-full rounded-3xl absolute top-0 left-0 bg-content1">
                             <Image
                               src={"/assets/logo.svg"}
-                              className="pointer-events-none ring-offset-default-foreground scale-x-[-1]"
+                              // src={"/assets/petchx.png"}
+
+                              className="pointer-events-none ring-offset-default-foreground scale-x-[-1] "
                               alt="Petchx Panuphong Burakitphachai"
-                              width={100}
-                              height={100}
+                              width={126}
+                              height={126}
                               onLoad={() => setImageLoaded(true)}
                               onError={() => setImageLoaded(true)} // Handle error by setting imageLoaded to true
                             />
@@ -209,7 +211,8 @@ export default function HomePage({}: Props) {
                         ) : (
                           <Image
                             src={"/assets/petchx.png"}
-                            className="pointer-events-none object-cover rounded-3xl w-full h-full"
+                            // src="/assets/logo.gif"
+                            className="pointer-events-none object-cover rounded-3xl w-full h-full "
                             fill={true}
                             alt="Petchx Panuphong Burakitphachai"
                             onLoad={() => setImageLoaded(true)}
@@ -296,13 +299,13 @@ export default function HomePage({}: Props) {
                     <motion.div whileHover={zoomIn} animate="animate">
                       <Image
                         src="/assets/logo.gif"
-                        className="pointer-events-none"
+                        className="pointer-events-none "
                         width={126}
                         height={126}
                         alt="Petchx Panuphong Burakitphachai"
                       />
                     </motion.div>
-                    <CardFooter className="justify-start flex-col items-start">
+                    <CardFooter className="justify-start flex-col items-start p-4">
                       <h1 className="opacity-50 text-sm">ผลงาน</h1>
                       <h1 className="text-xl">Projects</h1>
                     </CardFooter>
@@ -325,10 +328,17 @@ export default function HomePage({}: Props) {
             <div className="transition-transform h-full  duration-300 hover:scale-[1.02]">
               <Card className="rounded-3xl h-full ">
                 <CardBody className="justify-center items-center">
-                  <div className="h-32 flex gap-10 text-primary items-center">
-                    <TbCode size={50} />
-                    <TbDeviceMobileCode size={50} />
-                  </div>
+                  {/* <TbCode size={50} /> */}
+                  {/* <TbDeviceMobileCode size={50} /> */}
+                  <motion.div whileHover={zoomIn} animate="animate">
+                    <Image
+                      src="/assets/logo.gif"
+                      className="pointer-events-none "
+                      width={126}
+                      height={126}
+                      alt="Petchx Panuphong Burakitphachai"
+                    />
+                  </motion.div>
                   <CardFooter className="justify-start flex-col items-start">
                     <h1 className="opacity-50 text-xs">SPECIALIAZATION</h1>
                     <h1 className="text-xl">Services</h1>
@@ -377,9 +387,11 @@ export default function HomePage({}: Props) {
                       </motion.div>
                     </motion.div>
                     <motion.div
-                      aria-label="petchxpanuphong@gmail.com"
+                      aria-label="Petchx"
                       onClick={() => {
-                        router.push("mailto:petchxpanuphong@gmail.com");
+                        router.push(
+                          "https://www.facebook.com/profile.php?id=61564234927089",
+                        );
                       }}
                       whileHover={zoomIn}
                     >
@@ -388,7 +400,7 @@ export default function HomePage({}: Props) {
                         // className="p-4 bg-content1 rounded-full cursor-pointer"
                         className="p-4 bg-content1 rounded-full cursor-pointer hover:bg-blue-500 hover:text-white "
                       >
-                        <Icon icon="line-md:email" fontSize={32} />
+                        <Icon icon="line-md:facebook" fontSize={32} />
                       </div>
                     </motion.div>
                     <motion.div
@@ -467,39 +479,65 @@ export default function HomePage({}: Props) {
         </motion.div>
 
         <motion.div
-          className="col-span-2 0 h-56 order-7"
+          className="col-span-2 0 h-96 order-7"
           variants={fadeIn}
           initial="init"
           animate="end"
         >
           <div
             className="transition-transform h-full cursor-pointer duration-300 hover:scale-[1.02]"
-            onClick={() => router.push("https://getclockin.com")}
+            onClick={() => router.push("https://getclockin.app")}
           >
-            <Card className="group rounded-3xl h-full ">
-              <CardBody className="justify-center items-center">
-                <h1 className="text-5xl font-bold group-hover:text-[#f5a524] ">
-                  ClockIn
-                </h1>
+            <Card className="group rounded-3xl justify-center items-center h-full p-2 ">
+              <h1 className="text-5xl absolute z-10 font-bold group-hover:block hidden text-[#f5a524] ">
+                ClockIn
+              </h1>
+
+              <CardBody className="justify-center items-center hover:brightness-50">
+                <Image
+                  src="/assets/clockin-light.png"
+                  className="pointer-events-none dark:hidden  object-top block object-cover rounded-3xl"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
+                <Image
+                  src="/assets/clockin-dark.png"
+                  className="pointer-events-none object-top dark:block hidden object-cover rounded-3xl"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
               </CardBody>
             </Card>
           </div>
         </motion.div>
         <motion.div
-          className=" col-span-2 h-56 order-8"
+          className=" col-span-2 h-96 order-8"
           variants={fadeIn}
           initial="init"
           animate="end"
         >
           <div
             className="cursor-pointer transition-transform h-full  duration-300 hover:scale-[1.02]"
-            onClick={() => router.push("https://witelab.com")}
+            onClick={() => router.push("https://boostagram.dev")}
           >
-            <Card className="rounded-3xl h-full group ">
-              <CardBody className="justify-center items-center">
-                <h1 className="text-5xl font-bold  group-hover:text-[#3c61dd]">
-                  WiteLab
-                </h1>
+            <Card className="rounded-3xl justify-center items-center h-full group p-2">
+              <h1 className="text-5xl absolute z-10 font-bold group-hover:block hidden text-[#5865F2] ">
+                Boostagram
+              </h1>
+
+              <CardBody className="justify-center items-center hover:brightness-50">
+                <Image
+                  src="/assets/boostagram-light.png"
+                  className="pointer-events-none object-top dark:hidden block object-cover rounded-3xl"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
+                <Image
+                  src="/assets/boostagram-dark.png"
+                  className="pointer-events-none object-top  dark:block hidden object-cover rounded-3xl"
+                  fill={true}
+                  alt="Petchx Panuphong Burakitphachai"
+                />
               </CardBody>
             </Card>
           </div>
