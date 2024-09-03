@@ -28,7 +28,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 
 type Props = {};
 
-export default function HomePage({ }: Props) {
+export default function HomePage({}: Props) {
   const router = useRouter();
 
   const moveUp = {
@@ -162,14 +162,14 @@ export default function HomePage({ }: Props) {
                         damping: 18,
                         ease: "easeOut",
                       }}
-                    // whileHover={{
-                    //   rotateY: -190,
-                    //   transition: {
-                    //     type: "spring",
-                    //     damping: 18,
-                    //     duration: 0.5,
-                    //   },
-                    // }}
+                      // whileHover={{
+                      //   rotateY: -190,
+                      //   transition: {
+                      //     type: "spring",
+                      //     damping: 18,
+                      //     duration: 0.5,
+                      //   },
+                      // }}
                     >
                       <Skeleton
                         className="h-52 min-w-52 group rounded-tl-3xl rounded-br-3xl"
@@ -221,9 +221,11 @@ export default function HomePage({ }: Props) {
                   </div>
 
                   <CardFooter className="justify-start flex-col w-full items-start">
-                    <h1 className="mt-2 opacity-50">{info.role}</h1>
+                    <div className="flex items-end gap-1">
+                      <h1 className="mt-2 opacity-50">{info.role}</h1>
+                    </div>
                     <h1 className="mt-2 text-4xl font-bold">{info.name}</h1>
-                    <h1 className="mt-2">{info.description}</h1>
+                    <h1 className="mt-2">👋 {info.description}</h1>
                   </CardFooter>
                 </div>
               </CardBody>
@@ -280,7 +282,7 @@ export default function HomePage({ }: Props) {
                       />
                     </motion.div>
                     <CardFooter className="justify-start flex-col items-start p-4">
-                      <h1 className="opacity-50 text-xs">MORE ABOUT ME</h1>
+                      <h1 className="opacity-50 text-sm">เกี่ยวกับฉัน</h1>
                       <h1 className="text-xl">About me</h1>
                     </CardFooter>
                   </CardBody>
@@ -301,7 +303,7 @@ export default function HomePage({ }: Props) {
                       />
                     </motion.div>
                     <CardFooter className="justify-start flex-col items-start">
-                      <h1 className="opacity-50 text-xs">SHOW CASE</h1>
+                      <h1 className="opacity-50 text-sm">ผลงาน</h1>
                       <h1 className="text-xl">Projects</h1>
                     </CardFooter>
                   </CardBody>
