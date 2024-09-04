@@ -172,7 +172,7 @@ export default function HomePage({}: Props) {
                       // }}
                     >
                       <Skeleton
-                        className="h-52 min-w-52 group rounded-tl-3xl rounded-br-3xl"
+                        className="h-52 min-w-52 group rounded-3xl "
                         isLoaded={imageLoaded}
                       >
                         {/* <div className="bg-content1 hidden group-hover:flex group-hover:opacity-100 justify-center items-center shadow-medium w-52 h-52 rounded-3xl"> */}
@@ -330,14 +330,21 @@ export default function HomePage({}: Props) {
                 <CardBody className="justify-center items-center">
                   {/* <TbCode size={50} /> */}
                   {/* <TbDeviceMobileCode size={50} /> */}
-                  <motion.div whileHover={zoomIn} animate="animate">
-                    <Image
-                      src="/assets/logo.gif"
-                      className="pointer-events-none "
-                      width={126}
-                      height={126}
-                      alt="Petchx Panuphong Burakitphachai"
-                    />
+                  <motion.div
+                    className="flex h-[126px] items-center justify-center"
+                    whileHover={zoomIn}
+                    animate="animate"
+                  >
+                    <TbCode size={50} />
+                    <TbDeviceMobileCode size={50} />
+
+                    {/* <Image */}
+                    {/*   src="/assets/logo.gif" */}
+                    {/*   className="pointer-events-none " */}
+                    {/*   width={126} */}
+                    {/*   height={126} */}
+                    {/*   alt="Petchx Panuphong Burakitphachai" */}
+                    {/* /> */}
                   </motion.div>
                   <CardFooter className="justify-start flex-col items-start">
                     <h1 className="opacity-50 text-xs">SPECIALIAZATION</h1>
@@ -479,30 +486,30 @@ export default function HomePage({}: Props) {
         </motion.div>
 
         <motion.div
-          className="col-span-2 0 h-96 order-7"
+          className="col-span-2 0 h-80 order-7"
           variants={fadeIn}
           initial="init"
           animate="end"
         >
           <div
-            className="transition-transform h-full cursor-pointer duration-300 hover:scale-[1.02]"
-            onClick={() => router.push("https://getclockin.app")}
+            className="cursor-pointer h-full relative group "
+            onClick={() => router.push("https://boostagram.dev")}
           >
-            <Card className="group rounded-3xl justify-center items-center h-full p-2 ">
-              <h1 className="text-5xl absolute z-10 font-bold group-hover:block hidden text-[#f5a524] ">
-                ClockIn
-              </h1>
-
-              <CardBody className="justify-center items-center hover:brightness-50">
+            <div className="absolute w-full h-full bg-background/20 backdrop-blur-sm z-10 rounded-3xl group-hover:block hidden"></div>
+            <h1 className="text-6xl absolute w-full h-full items-center justify-center z-10 font-bold group-hover:flex hidden text-[#f5a524] ">
+              ClockIn
+            </h1>
+            <Card className=" rounded-3xl justify-center items-center h-full group p-2">
+              <CardBody className="justify-center items-center overflow-hidden">
                 <Image
                   src="/assets/clockin-light.png"
-                  className="pointer-events-none dark:hidden  object-top block object-cover rounded-3xl"
+                  className="group-hover:scale-105 duration-300  transition-transform   pointer-events-none roun object-top dark:hidden block object-cover rounded-3xl"
                   fill={true}
                   alt="Petchx Panuphong Burakitphachai"
                 />
                 <Image
                   src="/assets/clockin-dark.png"
-                  className="pointer-events-none object-top dark:block hidden object-cover rounded-3xl"
+                  className="pointer-events-none object-top  group-hover:scale-105  duration-300  transition-transform   dark:block hidden object-cover rounded-3xl"
                   fill={true}
                   alt="Petchx Panuphong Burakitphachai"
                 />
@@ -511,30 +518,30 @@ export default function HomePage({}: Props) {
           </div>
         </motion.div>
         <motion.div
-          className=" col-span-2 h-96 order-8"
+          className=" col-span-2 h-80 order-8"
           variants={fadeIn}
           initial="init"
           animate="end"
         >
           <div
-            className="cursor-pointer transition-transform h-full  duration-300 hover:scale-[1.02]"
+            className="cursor-pointer h-full relative group "
             onClick={() => router.push("https://boostagram.dev")}
           >
-            <Card className="rounded-3xl justify-center items-center h-full group p-2">
-              <h1 className="text-5xl absolute z-10 font-bold group-hover:block hidden text-[#5865F2] ">
-                Boostagram
-              </h1>
-
-              <CardBody className="justify-center items-center hover:brightness-50">
+            <div className="absolute w-full h-full bg-background/20 backdrop-blur-sm z-10 rounded-3xl group-hover:block hidden"></div>
+            <h1 className="text-6xl absolute w-full h-full items-center justify-center z-10 font-bold group-hover:flex hidden text-[#006fee] ">
+              Boostagram
+            </h1>
+            <Card className=" rounded-3xl justify-center items-center h-full group p-2">
+              <CardBody className="justify-center items-center ">
                 <Image
                   src="/assets/boostagram-light.png"
-                  className="pointer-events-none object-top dark:hidden block object-cover rounded-3xl"
+                  className="pointer-events-none group-hover:scale-105 duration-300  transition-transform   object-top dark:hidden block object-cover rounded-3xl"
                   fill={true}
                   alt="Petchx Panuphong Burakitphachai"
                 />
                 <Image
                   src="/assets/boostagram-dark.png"
-                  className="pointer-events-none object-top  dark:block hidden object-cover rounded-3xl"
+                  className="pointer-events-none object-top group-hover:scale-105 duration-300  transition-transform   dark:block hidden object-cover rounded-3xl"
                   fill={true}
                   alt="Petchx Panuphong Burakitphachai"
                 />
