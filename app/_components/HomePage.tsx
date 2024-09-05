@@ -490,11 +490,9 @@ export default function HomePage({}: Props) {
           variants={fadeIn}
           initial="init"
           animate="end"
+          onClick={() => router.push("https://getclockin.app")}
         >
-          <div
-            className="cursor-pointer h-full relative group "
-            onClick={() => router.push("https://boostagram.dev")}
-          >
+          <div className="cursor-pointer h-full relative group ">
             <div className="absolute w-full h-full bg-background/20 backdrop-blur-sm z-10 rounded-3xl group-hover:block hidden"></div>
             <h1 className="text-6xl absolute w-full h-full items-center justify-center z-10 font-bold group-hover:flex hidden text-[#f5a524] ">
               ClockIn
@@ -522,11 +520,9 @@ export default function HomePage({}: Props) {
           variants={fadeIn}
           initial="init"
           animate="end"
+          onClick={() => router.push("https://boostagram.dev")}
         >
-          <div
-            className="cursor-pointer h-full relative group "
-            onClick={() => router.push("https://boostagram.dev")}
-          >
+          <div className="cursor-pointer h-full relative group ">
             <div className="absolute w-full h-full bg-background/20 backdrop-blur-sm z-10 rounded-3xl group-hover:block hidden"></div>
             <h1 className="text-6xl absolute w-full h-full items-center justify-center z-10 font-bold group-hover:flex hidden text-[#006fee] ">
               Boostagram
