@@ -347,7 +347,7 @@ export default function HomePage({}: Props) {
                     {/* /> */}
                   </motion.div>
                   <CardFooter className="justify-start flex-col items-start">
-                    <h1 className="opacity-50 text-xs">SPECIALIAZATION</h1>
+                    <h1 className="opacity-50 text-xs">บริการ</h1>
                     <h1 className="text-xl">Services</h1>
                   </CardFooter>
                 </CardBody>

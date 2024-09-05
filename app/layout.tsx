@@ -6,7 +6,7 @@ import Footer from "./_components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const font = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Petchx",
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${GeistSans.variable}`}>
+      <body className={`${font.className}`}>
         <Providers>
           {children}
           <Analytics />
